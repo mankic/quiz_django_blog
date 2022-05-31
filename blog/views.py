@@ -20,3 +20,12 @@ def new_view(request):
         # 페이지 받아오면서 현 Category 모델에 존재하는 것만 사용자가 선택해야해서, 전체 불러온다.
         categories = Category.objects.all()
         return render(request, 'new.html',{'categories':categories})
+
+
+def category_view(request):
+    categories = Category.objects.all()
+    return render(request, 'category.html', {'categories':categories})
+
+
+def article_view(request, name):
+    category
