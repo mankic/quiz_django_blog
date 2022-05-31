@@ -27,5 +27,14 @@ def category_view(request):
     return render(request, 'category.html', {'categories':categories})
 
 
+# '127.0.0.1/movie' -> name = 'movie'
 def article_view(request, name):
-    category
+    category = Category.objects.get(name=name)
+    articles = Article.objects.filter(category=category)
+    return render(request, 'article.html', {'articles':articles})
+
+
+# '127.0.0.1/detail/1' -> pk = 1
+def detail_view(request, pk):
+    article = Article.objects.get(pk=pk)
+    return render(request, 'detail.html', {'article':article})
