@@ -15,7 +15,7 @@ def new_view(request):
 
         # 자동으로 pk 라는 필드를 만들어준다.
         # 첫번째 글을 썼다 -> pk = 1
-        return redirect('/detail', article.pk)
+        return redirect('detail', article.pk)
     elif request.method == 'GET':
         # 페이지 받아오면서 현 Category 모델에 존재하는 것만 사용자가 선택해야해서, 전체 불러온다.
         categories = Category.objects.all()
