@@ -8,5 +8,6 @@
     {% for article in articles %}
         <a href="{% url 'detail' article.pk %}">{{ article.title }}</a>
     {% endfor %}
+    <a href="{% url 'category' %}">카테고리 목록</a>
 </body>
 </html>
