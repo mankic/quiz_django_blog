@@ -24,7 +24,10 @@ def new_view(request):
 
 def category_view(request):
     categories = Category.objects.all()
-    return render(request, 'category.html', {'categories':categories})
+    infos = {}
+    for category in categories:
+        infos[category.name] = Article.objects.filter(category=category).count()
+    return render(request, 'category.html', {'infos':infos})
 
 
 # '127.0.0.1/movie' -> name = 'movie'
