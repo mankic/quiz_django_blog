@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for category in categories %}
+        <a href="{% url 'article' category.name %}">{{ category.name }}</a>
+    {% endfor %}
+    <a href="{% url 'new' %}">글쓰기</a>
+</body>
+</html>
